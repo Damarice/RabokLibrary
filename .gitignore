@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Environment variables (contains secrets - never commit)
+.env
+
+# Uploads (user files)
+uploads/manuscripts/*
+uploads/figures/*
+uploads/supplementary/*
+uploads/temp/*
+!uploads/manuscripts/.gitkeep
+!uploads/figures/.gitkeep
+!uploads/supplementary/.gitkeep
+!uploads/temp/.gitkeep
+
+# Logs
+*.log
+stderr.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Zip files
+*.zip
+
+# Temp
+tmp/

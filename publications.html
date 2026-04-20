@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Publications - Raboks Library Research & Development Center. Browse our comprehensive collection of research publications, journal articles, and scholarly works.">
+    <meta name="keywords" content="publications, research papers, journal articles, academic papers, scholarly works, raboks library">
+    <meta name="author" content="Raboks Library R&D Team">
+    
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Publications | Raboks Library R&D Center">
+    <meta property="og:description" content="Browse our comprehensive collection of research publications and scholarly works.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rabokslibrary.org/publications">
+    
+    <!-- Page Title -->
+    <title>Publications | Raboks Library R&D Center</title>
+    
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    
+    <!-- Favicon (add your favicon files) -->
+    <!-- <link rel="icon" type="image/x-icon" href="/favicon.ico"> -->
+</head>
+<body>
+    <!-- 
+    ====================================
+    PUBLICATIONS PAGE
+    ====================================
+    
+    Comprehensive listing of research publications, organized by category
+    and featuring search/filter functionality for easy discovery.
+    -->
+    
+    <!-- 
+    ====================================
+    HEADER & NAVIGATION
+    ====================================
+    Fixed header with institutional branding and main navigation
+    -->
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <!-- Logo with institutional branding -->
+            <a href="index.html" class="logo" aria-label="Raboks Library Research and Development Center - Home">
+                <img src="logo.svg" alt="Raboks Library R&D Logo" class="logo-image">
+            </a>
+            
+            <!-- Main navigation links -->
+            <ul class="nav-links">
+                <li><a href="index.html#research" aria-label="View our research areas">Research</a></li>
+                <li><a href="index.html#services" aria-label="Explore our services">Services</a></li>
+                <li><a href="publications.html" aria-label="Browse our publications" class="active">Publications</a></li>
+                <li><a href="peer-review.html" aria-label="Access peer review system">Peer Review</a></li>
+                <li><a href="index.html#about" aria-label="Learn about us">About</a></li>
+                <li><a href="index.html#contact" aria-label="Contact information">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 
+    ====================================
+    PAGE HERO
+    ====================================
+    Publications page header with search functionality
+    -->
+    <section class="page-hero" role="main">
+        <div class="hero-content">
+            <h1>Publications</h1>
+            <p class="hero-subtitle">Research & Scholarly Works</p>
+            <p class="hero-description">
+                Explore our comprehensive collection of research publications, journal articles, conference papers, and scholarly contributions spanning multiple disciplines and research areas.
+            </p>
+            
+            <!-- Search and filter controls -->
+            <div class="publications-controls">
+                <div class="search-container">
+                    <input type="text" id="publication-search" placeholder="Search publications..." aria-label="Search publications">
+                    <button type="button" class="search-button" aria-label="Search">🔍</button>
+                </div>
+                
+                <div class="filter-container">
+                    <select id="category-filter" aria-label="Filter by category">
+                        <option value="">All Categories</option>
+                        <option value="journal">Journal Articles</option>
+                        <option value="conference">Conference Papers</option>
+                        <option value="report">Research Reports</option>
+                        <option value="book">Book Publications</option>
+                        <option value="working">Working Papers</option>
+                    </select>
+                    
+                    <select id="year-filter" aria-label="Filter by year">
+                        <option value="">All Years</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+    ====================================
+    FEATURED PUBLICATIONS
+    ====================================
+    Highlighted recent or important publications
+    -->
+    <section class="section" role="region" aria-labelledby="featured-publications-heading">
+        <h2 id="featured-publications-heading" class="section-title">Featured Publications</h2>
+        <p class="section-subtitle">Our most recent and impactful research contributions</p>
+        
+        <div class="featured-publications-grid">
+            <article class="featured-publication-card">
+                <div class="publication-image">
+                    <img src="images/data-science.svg" alt="AI and Sustainable Development Research" class="publication-img">
+                </div>
+                <div class="publication-content">
+                    <div class="publication-meta">
+                        <span class="publication-type">Journal Article</span>
+                        <span class="publication-year">2024</span>
+                    </div>
+                    <h3 class="publication-title">Artificial Intelligence for Sustainable Development: A Comprehensive Framework</h3>
+                    <p class="publication-authors">Dr. Sarah Chen, Prof. Michael Rodriguez, Dr. Aisha Patel</p>
+                    <p class="publication-description">
+                        This groundbreaking study presents a novel framework for applying artificial intelligence techniques to address global sustainability challenges, with case studies from renewable energy optimization and climate modeling.
+                    </p>
+                    <div class="publication-journal">Nature Sustainability, Vol. 7, Issue 3</div>
+                    <div class="publication-actions">
+                        <a href="#" class="publication-link">Read Abstract</a>
+                        <a href="#" class="publication-link">Download PDF</a>
+                        <a href="#" class="publication-link">Cite</a>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="featured-publication-card">
+                <div class="publication-image">
+                    <img src="images/biology.svg" alt="Systems Biology Research" class="publication-img">
+                </div>
+                <div class="publication-content">
+                    <div class="publication-meta">
+                        <span class="publication-type">Conference Paper</span>
+                        <span class="publication-year">2024</span>
+                    </div>
+                    <h3 class="publication-title">Multi-Scale Modeling of Cellular Networks: From Molecules to Organisms</h3>
+                    <p class="publication-authors">Dr. James Liu, Dr. Elena Kowalski, Prof. David Thompson</p>
+                    <p class="publication-description">
+                        An innovative approach to understanding complex biological systems through integrated computational models that span multiple scales of biological organization.
+                    </p>
+                    <div class="publication-journal">Proceedings of the International Conference on Systems Biology</div>
+                    <div class="publication-actions">
+                        <a href="#" class="publication-link">Read Abstract</a>
+                        <a href="#" class="publication-link">Download PDF</a>
+                        <a href="#" class="publication-link">Cite</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 
+    ====================================
+    ALL PUBLICATIONS
+    ====================================
+    Complete listing of publications with filtering
+    -->
+    <section class="section" role="region" aria-labelledby="all-publications-heading">
+        <h2 id="all-publications-heading" class="section-title">All Publications</h2>
+        
+        <!-- Publications list -->
+        <div class="publications-list" id="publications-list">
+            
+            <!-- 2024 Publications -->
+            <div class="publication-year-group">
+                <h3 class="year-heading">2024</h3>
+                
+                <article class="publication-item" data-category="journal" data-year="2024">
+                    <div class="publication-item-content">
+                        <div class="publication-item-meta">
+                            <span class="publication-type">Journal Article</span>
+                            <span class="publication-date">March 2024</span>
+                        </div>
+                        <h4 class="publication-item-title">Quantum Machine Learning for Drug Discovery: A Systematic Review</h4>
+                        <p class="publication-item-authors">Dr. Maria Santos, Prof. Robert Kim, Dr. Ahmed Hassan</p>
+                        <p class="publication-item-journal">Journal of Computational Chemistry, Vol. 45, Issue 8</p>
+                        <div class="publication-item-actions">
+                            <a href="#" class="publication-link">Abstract</a>
+                            <a href="#" class="publication-link">PDF</a>
+                            <a href="#" class="publication-link">Cite</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="publication-item" data-category="conference" data-year="2024">
+                    <div class="publication-item-content">
+                        <div class="publication-item-meta">
+                            <span class="publication-type">Conference Paper</span>
+                            <span class="publication-date">February 2024</span>
+                        </div>
+                        <h4 class="publication-item-title">Sustainable Materials Design Using Machine Learning Approaches</h4>
+                        <p class="publication-item-authors">Dr. Lisa Wang, Prof. Carlos Mendez, Dr. Fatima Al-Rashid</p>
+                        <p class="publication-item-journal">International Conference on Materials Science and Engineering</p>
+                        <div class="publication-item-actions">
+                            <a href="#" class="publication-link">Abstract</a>
+                            <a href="#" class="publication-link">PDF</a>
+                            <a href="#" class="publication-link">Cite</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="publication-item" data-category="report" data-year="2024">
+                    <div class="publication-item-content">
+                        <div class="publication-item-meta">
+                            <span class="publication-type">Research Report</span>
+                            <span class="publication-date">January 2024</span>
+                        </div>
+                        <h4 class="publication-item-title">Annual Report on Computational Biology Research Initiatives</h4>
+                        <p class="publication-item-authors">Raboks Library Computational Biology Division</p>
+                        <p class="publication-item-journal">Internal Research Report RR-2024-001</p>
+                        <div class="publication-item-actions">
+                            <a href="#" class="publication-link">Abstract</a>
+                            <a href="#" class="publication-link">PDF</a>
+                            <a href="#" class="publication-link">Cite</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- 2023 Publications -->
+            <div class="publication-year-group">
+                <h3 class="year-heading">2023</h3>
+                
+                <article class="publication-item" data-category="journal" data-year="2023">
+                    <div class="publication-item-content">
+                        <div class="publication-item-meta">
+                            <span class="publication-type">Journal Article</span>
+                            <span class="publication-date">December 2023</span>
+                        </div>
+                        <h4 class="publication-item-title">Deep Learning Applications in Climate Modeling: Challenges and Opportunities</h4>
+                        <p class="publication-item-authors">Prof. Jennifer Adams, Dr. Yuki Tanaka, Dr. Pierre Dubois</p>
+                        <p class="publication-item-journal">Climate Dynamics, Vol. 61, Issue 12</p>
+                        <div class="publication-item-actions">
+                            <a href="#" class="publication-link">Abstract</a>
+                            <a href="#" class="publication-link">PDF</a>
+                            <a href="#" class="publication-link">Cite</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="publication-item" data-category="book" data-year="2023">
+                    <div class="publication-item-content">
+                        <div class="publication-item-meta">
+                            <span class="publication-type">Book Chapter</span>
+                            <span class="publication-date">November 2023</span>
+                        </div>
+                        <h4 class="publication-item-title">Interdisciplinary Approaches to Complex Systems Research</h4>
+                        <p class="publication-item-authors">Dr. Michael Brown, Prof. Anna Kowalski</p>
+                        <p class="publication-item-journal">In: Handbook of Complex Systems Science, Springer</p>
+                        <div class="publication-item-actions">
+                            <a href="#" class="publication-link">Abstract</a>
+                            <a href="#" class="publication-link">PDF</a>
+                            <a href="#" class="publication-link">Cite</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="publication-item" data-category="working" data-year="2023">
+                    <div class="publication-item-content">
+                        <div class="publication-item-meta">
+                            <span class="publication-type">Working Paper</span>
+                            <span class="publication-date">October 2023</span>
+                        </div>
+                        <h4 class="publication-item-title">Ethical Considerations in AI-Driven Research: A Framework for Responsible Innovation</h4>
+                        <p class="publication-item-authors">Dr. Sarah Johnson, Prof. David Lee, Dr. Priya Sharma</p>
+                        <p class="publication-item-journal">Working Paper Series WP-2023-015</p>
+                        <div class="publication-item-actions">
+                            <a href="#" class="publication-link">Abstract</a>
+                            <a href="#" class="publication-link">PDF</a>
+                            <a href="#" class="publication-link">Cite</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+        </div>
+        
+        <!-- Load more button -->
+        <div class="section-cta">
+            <button class="cta-button" id="load-more-btn">
+                <span>Load More Publications</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- 
+    ====================================
+    PUBLICATION STATISTICS
+    ====================================
+    Overview of publication metrics and impact
+    -->
+    <section class="section stats-section" role="region" aria-labelledby="stats-heading">
+        <h2 id="stats-heading" class="section-title">Publication Impact</h2>
+        <p class="section-subtitle">Our research contributions by the numbers</p>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">247</div>
+                <div class="stat-label">Total Publications</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-number">1,834</div>
+                <div class="stat-label">Total Citations</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-number">42</div>
+                <div class="stat-label">Journal Articles (2024)</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-number">18</div>
+                <div class="stat-label">International Collaborations</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+    ====================================
+    FOOTER
+    ====================================
+    Site footer with organized navigation and contact information
+    -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Research</h4>
+                <ul>
+                    <li><a href="index.html#research">Current Projects</a></li>
+                    <li><a href="index.html#research">Research Areas</a></li>
+                    <li><a href="#">Methodologies</a></li>
+                    <li><a href="#">Collaborations</a></li>
+                    <li><a href="#">Funding</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Publications</h4>
+                <ul>
+                    <li><a href="publications.html">Journal Articles</a></li>
+                    <li><a href="publications.html">Research Reports</a></li>
+                    <li><a href="publications.html">Conference Papers</a></li>
+                    <li><a href="publications.html">Working Papers</a></li>
+                    <li><a href="publications.html">Book Publications</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="index.html#services">Consultation</a></li>
+                    <li><a href="index.html#services">Training Programs</a></li>
+                    <li><a href="index.html#services">Data Analysis</a></li>
+                    <li><a href="index.html#services">Technical Support</a></li>
+                    <li><a href="index.html#services">Facilities</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact Information</a></li>
+                    <li><a href="#">Visit Us</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Raboks Library Research & Development Center. Advancing knowledge through systematic inquiry.</p>
+        </div>
+    </footer>
+
+    <!-- 
+    ====================================
+    JAVASCRIPT
+    ====================================
+    External JavaScript file for all interactive functionality
+    -->
+    <script src="script.js"></script>
+    <script src="publications.js"></script>
+</body>
+</html>

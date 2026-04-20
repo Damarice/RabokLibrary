@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Raboks Library Research & Development Center - Advancing knowledge through systematic research, innovative methodologies, and collaborative scholarship.">
+    <meta name="keywords" content="research, development, library, academic, science, innovation, collaboration">
+    <meta name="author" content="Raboks Library R&D Team">
+    
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Raboks Library | Research & Development Center">
+    <meta property="og:description" content="A dedicated institution advancing knowledge through systematic research and collaborative scholarship.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rabokslibrary.org">
+    
+    <!-- Page Title -->
+    <title>Raboks Library | Research & Development Center</title>
+    
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    
+    <!-- Favicon (add your favicon files) -->
+    <!-- <link rel="icon" type="image/x-icon" href="/favicon.ico"> -->
+</head>
+<body>
+    <!-- 
+    ====================================
+    RABOKS LIBRARY R&D CENTER WEBSITE
+    ====================================
+    
+    A minimalist, elegant website for an academic research institution.
+    Features:
+    - Clean, professional design with cream and gray color scheme
+    - Responsive layout that works on all devices
+    - Smooth animations and interactions
+    - Accessible navigation and content structure
+    - Modular CSS and JavaScript for easy maintenance
+    
+    Structure:
+    1. Header with logo and navigation
+    2. Hero section with main messaging
+    3. Research areas showcase
+    4. Services offered
+    5. Featured research highlight
+    6. Recent publications
+    7. Footer with organized links
+    -->
+    
+    <!-- 
+    ====================================
+    HEADER & NAVIGATION
+    ====================================
+    Fixed header with institutional branding and main navigation
+    -->
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <!-- Logo with institutional branding -->
+            <a href="#" class="logo" aria-label="Raboks Library Research and Development Center - Home">
+                <img src="logo.svg" alt="Raboks Library R&D Logo" class="logo-image">
+            </a>
+            
+            <!-- Main navigation links -->
+            <ul class="nav-links">
+                <li><a href="#research" aria-label="View our research areas">Research</a></li>
+                <li><a href="#services" aria-label="Explore our services">Services</a></li>
+                <li><a href="publications.html" aria-label="Browse our publications">Publications</a></li>
+                <li><a href="peer-review.html" aria-label="Access peer review system">Peer Review</a></li>
+                <li><a href="#about" aria-label="Learn about us">About</a></li>
+                <li><a href="#contact" aria-label="Contact information">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 
+    ====================================
+    HERO SECTION
+    ====================================
+    Main landing area with institutional messaging and call-to-action
+    -->
+    <section class="hero" role="main">
+        <div class="hero-background">
+            <img src="images/hero-bg.svg" alt="" class="hero-bg-image">
+        </div>
+        <div class="hero-content">
+            <!-- Main heading with institutional name -->
+            <h1>Raboks Library</h1>
+            
+            <!-- Subtitle describing the institution type -->
+            <p class="hero-subtitle">Research & Development Center</p>
+            
+            <!-- Mission statement and value proposition -->
+            <p class="hero-description">
+                A dedicated institution advancing knowledge through systematic research, innovative methodologies, and collaborative scholarship. We bridge the gap between theoretical inquiry and practical application.
+            </p>
+            
+            <!-- Primary call-to-action -->
+            <a href="#research" class="cta-button" aria-label="Explore our research areas">
+                <span>Explore Research</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 
+    ====================================
+    RESEARCH AREAS SECTION
+    ====================================
+    Showcase of primary research focus areas with visual cards
+    -->
+    <section class="section" id="research" role="region" aria-labelledby="research-heading">
+        <!-- Section header -->
+        <h2 id="research-heading" class="section-title">Research Areas</h2>
+        <p class="section-subtitle">Our multidisciplinary approach encompasses diverse fields of inquiry, fostering innovation through collaborative research initiatives</p>
+        
+        <!-- Research areas grid -->
+        <div class="research-grid">
+            <!-- Data Sciences Research Card -->
+            <article class="research-card" tabindex="0" role="button" aria-label="Learn more about Data Sciences & Analytics research">
+                <div class="research-image">
+                    <img src="images/data-science.svg" alt="Data Sciences & Analytics Research" class="research-img">
+                </div>
+                <div class="research-content">
+                    <h3 class="research-title">Data Sciences & Analytics</h3>
+                    <p class="research-description">Advanced computational methods for pattern recognition, predictive modeling, and statistical analysis across large-scale datasets.</p>
+                    <div class="research-meta">Computational Research Division</div>
+                </div>
+            </article>
+            
+            <!-- Systems Biology Research Card -->
+            <article class="research-card" tabindex="0" role="button" aria-label="Learn more about Systems Biology research">
+                <div class="research-image">
+                    <img src="images/biology.svg" alt="Systems Biology Research" class="research-img">
+                </div>
+                <div class="research-content">
+                    <h3 class="research-title">Systems Biology</h3>
+                    <p class="research-description">Integrative approaches to understanding complex biological systems through mathematical modeling and experimental validation.</p>
+                    <div class="research-meta">Life Sciences Department</div>
+                </div>
+            </article>
+            
+            <!-- Materials Research Card -->
+            <article class="research-card" tabindex="0" role="button" aria-label="Learn more about Materials Research">
+                <div class="research-image">
+                    <img src="images/materials.svg" alt="Materials Research" class="research-img">
+                </div>
+                <div class="research-content">
+                    <h3 class="research-title">Materials Research</h3>
+                    <p class="research-description">Investigation of novel materials and their properties for applications in technology, medicine, and sustainable development.</p>
+                    <div class="research-meta">Physical Sciences Division</div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 
+    ====================================
+    SERVICES SECTION
+    ====================================
+    Overview of services offered by the research center
+    -->
+    <section class="section" id="services" role="region" aria-labelledby="services-heading">
+        <h2 id="services-heading" class="section-title">Services</h2>
+        <p class="section-subtitle">Comprehensive research support and consultation services designed to advance scholarly inquiry and institutional development</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">📚</span>
+                <div class="service-title">Research Consultation</div>
+                <p class="service-description">Expert guidance on research methodology, project design, and strategic planning for academic and institutional initiatives.</p>
+            </div>
+            
+            <div class="service-card">
+                <span class="service-icon">📖</span>
+                <div class="service-title">Publication Support</div>
+                <p class="service-description">Comprehensive editorial services, peer review coordination, and publication strategy development for scholarly works.</p>
+            </div>
+            
+            <div class="service-card">
+                <span class="service-icon">🎓</span>
+                <div class="service-title">Educational Programs</div>
+                <p class="service-description">Specialized training workshops, seminars, and certification programs for researchers and academic professionals.</p>
+            </div>
+            
+            <div class="service-card">
+                <span class="service-icon">🤝</span>
+                <div class="service-title">Collaborative Research</div>
+                <p class="service-description">Facilitation of interdisciplinary partnerships and joint research initiatives across institutions and disciplines.</p>
+            </div>
+            
+            <div class="service-card">
+                <span class="service-icon">💡</span>
+                <div class="service-title">Innovation Labs</div>
+                <p class="service-description">State-of-the-art facilities and resources for experimental research and prototype development.</p>
+            </div>
+            
+            <div class="service-card">
+                <span class="service-icon">📊</span>
+                <div class="service-title">Data Analysis</div>
+                <p class="service-description">Advanced statistical analysis, data visualization, and computational modeling services for research projects.</p>
+            </div>
+            
+            <div class="service-card peer-review-highlight">
+                <span class="service-icon">🔍</span>
+                <div class="service-title">Peer Review System</div>
+                <p class="service-description">Comprehensive academic submission and review platform for verified researchers to submit, review, and manage scholarly works.</p>
+                <a href="peer-review.html" class="service-link">Access System →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+    ====================================
+    FEATURED RESEARCH SECTION
+    ====================================
+    Highlight of current major research initiative
+    -->
+    <section class="section" id="featured-research" role="region" aria-labelledby="featured-heading">
+        <div class="featured-section">
+            <div class="featured-content">
+                <h3 id="featured-heading">Current Research Initiative</h3>
+                <p>
+                    Our flagship interdisciplinary project examines the intersection of artificial intelligence and sustainable development. This comprehensive study involves collaboration with leading institutions worldwide, focusing on innovative solutions for environmental challenges through advanced computational methods.
+                </p>
+                <a href="publications.html" class="learn-more-button">
+                    <span>Learn More</span>
+                    <span>→</span>
+                </a>
+            </div>
+            <div class="featured-image">
+                <img src="images/materials.svg" alt="Current Research Initiative" class="featured-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+    ====================================
+    RECENT PUBLICATIONS SECTION
+    ====================================
+    Showcase of latest research publications
+    -->
+    <section class="section" role="region" aria-labelledby="publications-heading">
+        <h2 id="publications-heading" class="section-title">Recent Publications</h2>
+        <p class="section-subtitle">Latest research findings and scholarly contributions from our research teams</p>
+        
+        <div class="research-grid">
+            <article class="research-card" tabindex="0" role="button" aria-label="Read about Quantum Computing Applications">
+                <div class="research-image">
+                    <img src="images/data-science.svg" alt="Quantum Computing Research" class="research-img">
+                </div>
+                <div class="research-content">
+                    <h3 class="research-title">Quantum Computing Applications</h3>
+                    <p class="research-description">A comprehensive analysis of quantum algorithms and their potential applications in cryptography and optimization problems.</p>
+                    <div class="research-meta">Journal of Advanced Computing</div>
+                </div>
+            </article>
+            
+            <article class="research-card" tabindex="0" role="button" aria-label="Read about Sustainable Energy Systems">
+                <div class="research-image">
+                    <img src="images/materials.svg" alt="Sustainable Energy Research" class="research-img">
+                </div>
+                <div class="research-content">
+                    <h3 class="research-title">Sustainable Energy Systems</h3>
+                    <p class="research-description">Innovative approaches to renewable energy integration and grid optimization for sustainable urban development.</p>
+                    <div class="research-meta">Environmental Science Review</div>
+                </div>
+            </article>
+            
+            <article class="research-card" tabindex="0" role="button" aria-label="Read about Cognitive Science Research">
+                <div class="research-image">
+                    <img src="images/biology.svg" alt="Cognitive Science Research" class="research-img">
+                </div>
+                <div class="research-content">
+                    <h3 class="research-title">Cognitive Science Research</h3>
+                    <p class="research-description">Exploring the mechanisms of human cognition through interdisciplinary approaches combining neuroscience and psychology.</p>
+                    <div class="research-meta">Cognitive Studies Quarterly</div>
+                </div>
+            </article>
+        </div>
+        
+        <!-- Link to full publications page -->
+        <div class="section-cta">
+            <a href="publications.html" class="cta-button">
+                <span>View All Publications</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 
+    ====================================
+    FOOTER
+    ====================================
+    Site footer with organized navigation and contact information
+    -->
+    <footer id="about" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Research</h4>
+                <ul>
+                    <li><a href="#research">Current Projects</a></li>
+                    <li><a href="#research">Research Areas</a></li>
+                    <li><a href="#">Methodologies</a></li>
+                    <li><a href="#">Collaborations</a></li>
+                    <li><a href="#">Funding</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Publications</h4>
+                <ul>
+                    <li><a href="publications.html">Journal Articles</a></li>
+                    <li><a href="publications.html">Research Reports</a></li>
+                    <li><a href="publications.html">Conference Papers</a></li>
+                    <li><a href="publications.html">Working Papers</a></li>
+                    <li><a href="publications.html">Book Publications</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Peer Review</h4>
+                <ul>
+                    <li><a href="peer-review.html">Submit Research</a></li>
+                    <li><a href="peer-review.html#dashboard">Review Dashboard</a></li>
+                    <li><a href="peer-review.html#repository">Browse Repository</a></li>
+                    <li><a href="peer-review.html">Join as Reviewer</a></li>
+                    <li><a href="peer-review.html">System Guidelines</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Consultation</a></li>
+                    <li><a href="#services">Training Programs</a></li>
+                    <li><a href="#services">Data Analysis</a></li>
+                    <li><a href="#services">Technical Support</a></li>
+                    <li><a href="#services">Facilities</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section" id="contact">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact Information</a></li>
+                    <li><a href="#">Visit Us</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Raboks Library Research & Development Center. Advancing knowledge through systematic inquiry.</p>
+        </div>
+    </footer>
+
+    <!-- 
+    ====================================
+    JAVASCRIPT
+    ====================================
+    External JavaScript file for all interactive functionality
+    -->
+    <script src="script.js"></script>
+</body>
+</html>

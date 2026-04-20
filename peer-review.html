@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Peer Review & Research Repository - Raboks Library R&D Center. Academic submission and review platform for verified researchers and professors.">
+    <meta name="keywords" content="peer review, academic submission, research repository, scholarly review, manuscript submission, academic publishing">
+    <meta name="author" content="Raboks Library R&D Team">
+    
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Peer Review & Research Repository | Raboks Library">
+    <meta property="og:description" content="Academic submission and review platform for verified researchers and professors.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rabokslibrary.org/peer-review">
+    
+    <!-- Page Title -->
+    <title>Peer Review & Research Repository | Raboks Library</title>
+    
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="peer-review.js" as="script">
+    
+    <!-- Favicon (add your favicon files) -->
+    <!-- <link rel="icon" type="image/x-icon" href="/favicon.ico"> -->
+</head>
+<body>
+    <!-- 
+    ====================================
+    PEER REVIEW & RESEARCH REPOSITORY
+    ====================================
+    
+    Academic submission and review platform featuring:
+    - Verified researcher authentication
+    - Manuscript submission workflow
+    - Peer review assignment and tracking
+    - Version control and document management
+    - Author attribution and collaboration tools
+    - Academic standards compliance
+    -->
+    
+    <!-- 
+    ====================================
+    HEADER & NAVIGATION
+    ====================================
+    Fixed header with institutional branding and main navigation
+    -->
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <!-- Logo with institutional branding -->
+            <a href="index.html" class="logo" aria-label="Raboks Library Research and Development Center - Home">
+                <img src="logo.svg" alt="Raboks Library R&D Logo" class="logo-image">
+            </a>
+            
+            <!-- Main navigation links -->
+            <ul class="nav-links">
+                <li><a href="index.html#research" aria-label="View our research areas">Research</a></li>
+                <li><a href="index.html#services" aria-label="Explore our services">Services</a></li>
+                <li><a href="publications.html" aria-label="Browse our publications">Publications</a></li>
+                <li><a href="peer-review.html" aria-label="Access peer review system" class="active">Peer Review</a></li>
+                <li><a href="index.html#about" aria-label="Learn about us">About</a></li>
+                <li><a href="index.html#contact" aria-label="Contact information">Contact</a></li>
+            </ul>
+            
+            <!-- User authentication area -->
+            <div class="auth-area" id="auth-area">
+                <button class="auth-button" id="login-btn">
+                    <span class="auth-icon">👤</span>
+                    <span>Sign In</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 
+    ====================================
+    PAGE HERO
+    ====================================
+    Peer review system introduction and access
+    -->
+    <section class="page-hero peer-review-hero" role="main">
+        <div class="hero-content">
+            <h1>Peer Review & Research Repository</h1>
+            <p class="hero-subtitle">Academic Submission & Review Platform</p>
+            <p class="hero-description">
+                A comprehensive platform for verified professors and researchers to submit manuscripts, manage peer reviews, and collaborate on scholarly works. Built on academic standards with modern workflow management.
+            </p>
+            
+            <!-- Quick access buttons -->
+            <div class="hero-actions">
+                <a href="#submit" class="cta-button primary">
+                    <span>Submit Research</span>
+                </a>
+                <a href="#dashboard" class="cta-button secondary">
+                    <span>Review Dashboard</span>
+                </a>
+                <a href="#repository" class="cta-button secondary">
+                    <span>Browse Repository</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- System status indicator -->
+        <div class="system-status">
+            <div class="status-indicator online"></div>
+            <span class="status-text">System Online • 247 Active Reviews • 1,834 Submissions</span>
+        </div>
+    </section>
+
+    <!-- 
+    ====================================
+    AUTHENTICATION MODAL
+    ====================================
+    Login/Registration for verified researchers
+    -->
+    <div class="modal-overlay" id="auth-modal" role="dialog" aria-labelledby="auth-modal-title" aria-hidden="true">
+        <div class="modal-content auth-modal">
+            <div class="modal-header">
+                <h2 id="auth-modal-title">Researcher Authentication</h2>
+                <button class="modal-close" id="auth-modal-close" aria-label="Close authentication modal">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <!-- Login Form -->
+                <div class="auth-form" id="login-form">
+                    <h3>Sign In</h3>
+                    <p class="auth-subtitle">Access your research dashboard and submissions</p>
+                    
+                    <form class="form-grid">
+                        <div class="form-group">
+                            <label for="login-email">Email Address</label>
+                            <input type="email" id="login-email" name="email" required 
+                                   placeholder="researcher@university.edu">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" name="password" required>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="remember-me" name="remember">
+                            <label for="remember-me">Remember me</label>
+                        </div>
+                        
+                        <button type="submit" class="form-button primary">Sign In</button>
+                        
+                        <div class="form-links">
+                            <a href="#" class="form-link">Forgot password?</a>
+                            <a href="#" class="form-link" id="show-register">New researcher? Register</a>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Registration Form -->
+                <div class="auth-form hidden" id="register-form">
+                    <h3>Researcher Registration</h3>
+                    <p class="auth-subtitle">Join our verified academic community</p>
+                    
+                    <form class="form-grid">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="reg-first-name">First Name</label>
+                                <input type="text" id="reg-first-name" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-last-name">Last Name</label>
+                                <input type="text" id="reg-last-name" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reg-email">Academic Email</label>
+                            <input type="email" id="reg-email" name="email" required 
+                                   placeholder="researcher@university.edu">
+                            <small class="form-help">Must be from an accredited institution</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reg-institution">Institution</label>
+                            <input type="text" id="reg-institution" name="institution" required 
+                                   placeholder="University of Research Excellence">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reg-department">Department/Field</label>
+                            <select id="reg-department" name="department" required>
+                                <option value="">Select your field</option>
+                                <option value="biology">Biology & Life Sciences</option>
+                                <option value="chemistry">Chemistry</option>
+                                <option value="physics">Physics</option>
+                                <option value="mathematics">Mathematics</option>
+                                <option value="computer-science">Computer Science</option>
+                                <option value="engineering">Engineering</option>
+                                <option value="medicine">Medicine & Health Sciences</option>
+                                <option value="social-sciences">Social Sciences</option>
+                                <option value="humanities">Humanities</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reg-position">Academic Position</label>
+                            <select id="reg-position" name="position" required>
+                                <option value="">Select your position</option>
+                                <option value="professor">Professor</option>
+                                <option value="associate-professor">Associate Professor</option>
+                                <option value="assistant-professor">Assistant Professor</option>
+                                <option value="postdoc">Postdoctoral Researcher</option>
+                                <option value="phd-student">PhD Student</option>
+                                <option value="researcher">Research Scientist</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reg-orcid">ORCID ID (Optional)</label>
+                            <input type="text" id="reg-orcid" name="orcid" 
+                                   placeholder="0000-0000-0000-0000">
+                            <small class="form-help">Helps verify your academic identity</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reg-password">Password</label>
+                            <input type="password" id="reg-password" name="password" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reg-confirm-password">Confirm Password</label>
+                            <input type="password" id="reg-confirm-password" name="confirmPassword" required>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="agree-terms" name="terms" required>
+                            <label for="agree-terms">I agree to the <a href="#" class="form-link">Terms of Service</a> and <a href="#" class="form-link">Academic Ethics Guidelines</a></label>
+                        </div>
+                        
+                        <button type="submit" class="form-button primary">Register for Review</button>
+                        
+                        <div class="form-links">
+                            <a href="#" class="form-link" id="show-login">Already registered? Sign in</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+    ====================================
+    MAIN DASHBOARD
+    ====================================
+    User dashboard for authenticated researchers
+    -->
+    <section class="section dashboard-section hidden" id="dashboard" role="region" aria-labelledby="dashboard-heading">
+        <div class="dashboard-header">
+            <h2 id="dashboard-heading" class="section-title">Research Dashboard</h2>
+            <div class="dashboard-user-info">
+                <div class="user-avatar">
+                    <span class="avatar-initials" id="user-initials">DR</span>
+                </div>
+                <div class="user-details">
+                    <div class="user-name" id="user-name">Dr. Researcher</div>
+                    <div class="user-institution" id="user-institution">University of Excellence</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Dashboard Stats -->
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <div class="stat-number" id="submissions-count">12</div>
+                <div class="stat-label">Submissions</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="reviews-count">8</div>
+                <div class="stat-label">Reviews Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="pending-reviews-count">3</div>
+                <div class="stat-label">Pending Reviews</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="publications-count">7</div>
+                <div class="stat-label">Published</div>
+            </div>
+        </div>
+        
+        <!-- Dashboard Navigation -->
+        <div class="dashboard-nav">
+            <button class="dashboard-tab active" data-tab="submissions">My Submissions</button>
+            <button class="dashboard-tab" data-tab="reviews">Review Assignments</button>
+            <button class="dashboard-tab" data-tab="manuscripts">Manuscripts</button>
+            <button class="dashboard-tab" data-tab="collaborations">Collaborations</button>
+        </div>
+        
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <!-- Submissions Tab -->
+            <div class="dashboard-panel active" id="submissions-panel">
+                <div class="panel-header">
+                    <h3>My Submissions</h3>
+                    <button class="cta-button primary" id="new-submission-btn">
+                        <span>+ New Submission</span>
+                    </button>
+                </div>
+                
+                <div class="submissions-list">
+                    <!-- Sample submission items -->
+                    <div class="submission-item">
+                        <div class="submission-header">
+                            <h4 class="submission-title">Machine Learning Applications in Climate Modeling</h4>
+                            <div class="submission-status status-under-review">Under Review</div>
+                        </div>
+                        <div class="submission-meta">
+                            <span class="submission-date">Submitted: March 15, 2024</span>
+                            <span class="submission-type">Research Article</span>
+                            <span class="submission-field">Environmental Science</span>
+                        </div>
+                        <div class="submission-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%"></div>
+                            </div>
+                            <span class="progress-text">2 of 3 reviews completed</span>
+                        </div>
+                        <div class="submission-actions">
+                            <button class="action-button">View Details</button>
+                            <button class="action-button">Download PDF</button>
+                            <button class="action-button">Message Editors</button>
+                        </div>
+                    </div>
+                    
+                    <div class="submission-item">
+                        <div class="submission-header">
+                            <h4 class="submission-title">Quantum Computing Algorithms for Drug Discovery</h4>
+                            <div class="submission-status status-accepted">Accepted</div>
+                        </div>
+                        <div class="submission-meta">
+                            <span class="submission-date">Submitted: February 8, 2024</span>
+                            <span class="submission-type">Research Article</span>
+                            <span class="submission-field">Computational Biology</span>
+                        </div>
+                        <div class="submission-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                            <span class="progress-text">Review completed • Accepted for publication</span>
+                        </div>
+                        <div class="submission-actions">
+                            <button class="action-button">View Details</button>
+                            <button class="action-button">Final Manuscript</button>
+                            <button class="action-button">Publication Timeline</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Reviews Tab -->
+            <div class="dashboard-panel" id="reviews-panel">
+                <div class="panel-header">
+                    <h3>Review Assignments</h3>
+                    <div class="review-filters">
+                        <select id="review-status-filter">
+                            <option value="">All Reviews</option>
+                            <option value="pending">Pending</option>
+                            <option value="in-progress">In Progress</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="reviews-list">
+                    <div class="review-item priority-high">
+                        <div class="review-header">
+                            <h4 class="review-title">Neural Networks for Protein Folding Prediction</h4>
+                            <div class="review-priority">High Priority</div>
+                        </div>
+                        <div class="review-meta">
+                            <span class="review-assigned">Assigned: March 20, 2024</span>
+                            <span class="review-due">Due: April 10, 2024</span>
+                            <span class="review-field">Computational Biology</span>
+                        </div>
+                        <div class="review-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 30%"></div>
+                            </div>
+                            <span class="progress-text">Initial review in progress</span>
+                        </div>
+                        <div class="review-actions">
+                            <button class="action-button primary">Continue Review</button>
+                            <button class="action-button">Download Manuscript</button>
+                            <button class="action-button">Request Extension</button>
+                        </div>
+                    </div>
+                    
+                    <div class="review-item">
+                        <div class="review-header">
+                            <h4 class="review-title">Sustainable Materials for Solar Cell Applications</h4>
+                            <div class="review-status status-completed">Completed</div>
+                        </div>
+                        <div class="review-meta">
+                            <span class="review-assigned">Assigned: February 15, 2024</span>
+                            <span class="review-completed">Completed: March 5, 2024</span>
+                            <span class="review-field">Materials Science</span>
+                        </div>
+                        <div class="review-actions">
+                            <button class="action-button">View Review</button>
+                            <button class="action-button">Download Report</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Manuscripts Tab -->
+            <div class="dashboard-panel" id="manuscripts-panel">
+                <div class="panel-header">
+                    <h3>Manuscript Management</h3>
+                    <button class="cta-button primary" id="upload-manuscript-btn">
+                        <span>+ Upload Manuscript</span>
+                    </button>
+                </div>
+                
+                <div class="manuscripts-grid">
+                    <div class="manuscript-card">
+                        <div class="manuscript-icon">📄</div>
+                        <h4 class="manuscript-title">AI Ethics Framework</h4>
+                        <div class="manuscript-meta">
+                            <span class="manuscript-version">Version 2.1</span>
+                            <span class="manuscript-date">Updated: March 18, 2024</span>
+                        </div>
+                        <div class="manuscript-status">Draft</div>
+                        <div class="manuscript-actions">
+                            <button class="action-button">Edit</button>
+                            <button class="action-button">Share</button>
+                            <button class="action-button">Submit</button>
+                        </div>
+                    </div>
+                    
+                    <div class="manuscript-card">
+                        <div class="manuscript-icon">📚</div>
+                        <h4 class="manuscript-title">Quantum Mechanics Textbook</h4>
+                        <div class="manuscript-meta">
+                            <span class="manuscript-version">Version 1.0</span>
+                            <span class="manuscript-date">Updated: March 10, 2024</span>
+                        </div>
+                        <div class="manuscript-status">Under Review</div>
+                        <div class="manuscript-actions">
+                            <button class="action-button">View</button>
+                            <button class="action-button">Download</button>
+                            <button class="action-button">History</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Collaborations Tab -->
+            <div class="dashboard-panel" id="collaborations-panel">
+                <div class="panel-header">
+                    <h3>Research Collaborations</h3>
+                    <button class="cta-button primary" id="invite-collaborator-btn">
+                        <span>+ Invite Collaborator</span>
+                    </button>
+                </div>
+                
+                <div class="collaborations-list">
+                    <div class="collaboration-item">
+                        <div class="collaboration-header">
+                            <h4 class="collaboration-title">Climate Change Mitigation Strategies</h4>
+                            <div class="collaboration-members">5 researchers</div>
+                        </div>
+                        <div class="collaboration-meta">
+                            <span class="collaboration-lead">Lead: Dr. Sarah Johnson</span>
+                            <span class="collaboration-institution">Multi-institutional</span>
+                        </div>
+                        <div class="collaboration-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                            <span class="progress-text">Data collection phase</span>
+                        </div>
+                        <div class="collaboration-actions">
+                            <button class="action-button">Join Discussion</button>
+                            <button class="action-button">View Documents</button>
+                            <button class="action-button">Schedule Meeting</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+    ====================================
+    SUBMISSION FORM
+    ====================================
+    New manuscript submission interface
+    -->
+    <section class="section submission-section hidden" id="submit" role="region" aria-labelledby="submission-heading">
+        <h2 id="submission-heading" class="section-title">Submit Research</h2>
+        <p class="section-subtitle">Submit your manuscript for peer review and publication consideration</p>
+        
+        <div class="submission-form-container">
+            <form class="submission-form" id="manuscript-submission-form">
+                <!-- Step 1: Manuscript Details -->
+                <div class="form-step active" data-step="1">
+                    <h3 class="step-title">Manuscript Information</h3>
+                    
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="manuscript-title">Title *</label>
+                            <input type="text" id="manuscript-title" name="title" required 
+                                   placeholder="Enter your manuscript title">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="manuscript-type">Manuscript Type *</label>
+                            <select id="manuscript-type" name="type" required>
+                                <option value="">Select type</option>
+                                <option value="research-article">Research Article</option>
+                                <option value="review-article">Review Article</option>
+                                <option value="short-communication">Short Communication</option>
+                                <option value="case-study">Case Study</option>
+                                <option value="technical-note">Technical Note</option>
+                                <option value="book-chapter">Book Chapter</option>
+                                <option value="conference-paper">Conference Paper</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="research-field">Research Field *</label>
+                            <select id="research-field" name="field" required>
+                                <option value="">Select field</option>
+                                <option value="biology">Biology & Life Sciences</option>
+                                <option value="chemistry">Chemistry</option>
+                                <option value="physics">Physics</option>
+                                <option value="mathematics">Mathematics</option>
+                                <option value="computer-science">Computer Science</option>
+                                <option value="engineering">Engineering</option>
+                                <option value="medicine">Medicine & Health Sciences</option>
+                                <option value="environmental">Environmental Science</option>
+                                <option value="social-sciences">Social Sciences</option>
+                                <option value="interdisciplinary">Interdisciplinary</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="manuscript-abstract">Abstract *</label>
+                            <textarea id="manuscript-abstract" name="abstract" required rows="6"
+                                      placeholder="Provide a comprehensive abstract (250-300 words)"></textarea>
+                            <small class="form-help">Word count: <span id="abstract-word-count">0</span>/300</small>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="manuscript-keywords">Keywords *</label>
+                            <input type="text" id="manuscript-keywords" name="keywords" required 
+                                   placeholder="Enter 5-8 keywords separated by commas">
+                            <small class="form-help">Separate keywords with commas</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Authors -->
+                <div class="form-step" data-step="2">
+                    <h3 class="step-title">Author Information</h3>
+                    
+                    <div class="authors-section">
+                        <div class="author-item" data-author="1">
+                            <h4>Corresponding Author</h4>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="author1-first">First Name *</label>
+                                    <input type="text" id="author1-first" name="author1FirstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="author1-last">Last Name *</label>
+                                    <input type="text" id="author1-last" name="author1LastName" required>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="author1-email">Email *</label>
+                                    <input type="email" id="author1-email" name="author1Email" required>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="author1-affiliation">Affiliation *</label>
+                                    <input type="text" id="author1-affiliation" name="author1Affiliation" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="author1-orcid">ORCID ID</label>
+                                    <input type="text" id="author1-orcid" name="author1Orcid" 
+                                           placeholder="0000-0000-0000-0000">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="additional-authors"></div>
+                        
+                        <button type="button" class="add-author-btn" id="add-author-btn">
+                            + Add Co-Author
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Step 3: File Upload -->
+                <div class="form-step" data-step="3">
+                    <h3 class="step-title">File Upload</h3>
+                    
+                    <div class="upload-section">
+                        <div class="upload-area" id="manuscript-upload">
+                            <div class="upload-icon">📄</div>
+                            <h4>Manuscript File *</h4>
+                            <p>Upload your main manuscript file</p>
+                            <input type="file" id="manuscript-file" name="manuscriptFile" 
+                                   accept=".pdf,.doc,.docx" required hidden>
+                            <button type="button" class="upload-button" onclick="document.getElementById('manuscript-file').click()">
+                                Choose File
+                            </button>
+                            <small class="form-help">Accepted formats: PDF, DOC, DOCX (Max 25MB)</small>
+                        </div>
+                        
+                        <div class="upload-area" id="figures-upload">
+                            <div class="upload-icon">🖼️</div>
+                            <h4>Figures & Tables</h4>
+                            <p>Upload supporting figures and tables</p>
+                            <input type="file" id="figures-files" name="figuresFiles" 
+                                   accept=".pdf,.png,.jpg,.jpeg,.tiff,.eps" multiple hidden>
+                            <button type="button" class="upload-button" onclick="document.getElementById('figures-files').click()">
+                                Choose Files
+                            </button>
+                            <small class="form-help">Accepted formats: PDF, PNG, JPG, TIFF, EPS</small>
+                        </div>
+                        
+                        <div class="upload-area" id="supplementary-upload">
+                            <div class="upload-icon">📎</div>
+                            <h4>Supplementary Materials</h4>
+                            <p>Upload additional supporting documents</p>
+                            <input type="file" id="supplementary-files" name="supplementaryFiles" 
+                                   multiple hidden>
+                            <button type="button" class="upload-button" onclick="document.getElementById('supplementary-files').click()">
+                                Choose Files
+                            </button>
+                            <small class="form-help">Any additional files supporting your research</small>
+                        </div>
+                    </div>
+                    
+                    <div class="uploaded-files" id="uploaded-files-list"></div>
+                </div>
+                
+                <!-- Step 4: Review Preferences -->
+                <div class="form-step" data-step="4">
+                    <h3 class="step-title">Review Preferences</h3>
+                    
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="suggested-reviewers">Suggested Reviewers</label>
+                            <textarea id="suggested-reviewers" name="suggestedReviewers" rows="4"
+                                      placeholder="Suggest 3-5 potential reviewers with their email addresses and affiliations"></textarea>
+                            <small class="form-help">Optional but helpful for finding qualified reviewers</small>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="excluded-reviewers">Excluded Reviewers</label>
+                            <textarea id="excluded-reviewers" name="excludedReviewers" rows="3"
+                                      placeholder="List any reviewers you wish to exclude and reasons"></textarea>
+                            <small class="form-help">Reviewers with conflicts of interest</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="review-timeline">Preferred Review Timeline</label>
+                            <select id="review-timeline" name="reviewTimeline">
+                                <option value="standard">Standard (6-8 weeks)</option>
+                                <option value="expedited">Expedited (3-4 weeks)</option>
+                                <option value="extended">Extended (10-12 weeks)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group checkbox-group full-width">
+                            <input type="checkbox" id="open-review" name="openReview">
+                            <label for="open-review">I consent to open peer review (reviewer names disclosed)</label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group full-width">
+                            <input type="checkbox" id="preprint-consent" name="preprintConsent">
+                            <label for="preprint-consent">I consent to posting a preprint during review</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 5: Final Review -->
+                <div class="form-step" data-step="5">
+                    <h3 class="step-title">Review & Submit</h3>
+                    
+                    <div class="submission-summary">
+                        <h4>Submission Summary</h4>
+                        <div class="summary-grid">
+                            <div class="summary-item">
+                                <strong>Title:</strong>
+                                <span id="summary-title">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <strong>Type:</strong>
+                                <span id="summary-type">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <strong>Field:</strong>
+                                <span id="summary-field">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <strong>Authors:</strong>
+                                <span id="summary-authors">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <strong>Files:</strong>
+                                <span id="summary-files">-</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="submission-agreements">
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="originality-agreement" name="originalityAgreement" required>
+                            <label for="originality-agreement">I confirm this work is original and has not been published elsewhere *</label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="ethics-agreement" name="ethicsAgreement" required>
+                            <label for="ethics-agreement">I confirm this research complies with ethical standards *</label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="copyright-agreement" name="copyrightAgreement" required>
+                            <label for="copyright-agreement">I agree to the copyright and licensing terms *</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Form Navigation -->
+                <div class="form-navigation">
+                    <button type="button" class="nav-button secondary" id="prev-step-btn" disabled>
+                        ← Previous
+                    </button>
+                    <div class="step-indicator">
+                        <span class="current-step">1</span> of <span class="total-steps">5</span>
+                    </div>
+                    <button type="button" class="nav-button primary" id="next-step-btn">
+                        Next →
+                    </button>
+                    <button type="submit" class="nav-button primary hidden" id="submit-manuscript-btn">
+                        Submit Manuscript
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- 
+    ====================================
+    REPOSITORY BROWSER
+    ====================================
+    Public repository of published works
+    -->
+    <section class="section repository-section" id="repository" role="region" aria-labelledby="repository-heading">
+        <h2 id="repository-heading" class="section-title">Research Repository</h2>
+        <p class="section-subtitle">Browse published research and academic works from our verified community</p>
+        
+        <!-- Repository Search and Filters -->
+        <div class="repository-controls">
+            <div class="search-container">
+                <input type="text" id="repository-search" placeholder="Search repository..." aria-label="Search repository">
+                <button type="button" class="search-button" aria-label="Search">🔍</button>
+            </div>
+            
+            <div class="filter-container">
+                <select id="repo-field-filter" aria-label="Filter by field">
+                    <option value="">All Fields</option>
+                    <option value="biology">Biology & Life Sciences</option>
+                    <option value="chemistry">Chemistry</option>
+                    <option value="physics">Physics</option>
+                    <option value="mathematics">Mathematics</option>
+                    <option value="computer-science">Computer Science</option>
+                    <option value="engineering">Engineering</option>
+                    <option value="medicine">Medicine & Health Sciences</option>
+                </select>
+                
+                <select id="repo-type-filter" aria-label="Filter by type">
+                    <option value="">All Types</option>
+                    <option value="research-article">Research Articles</option>
+                    <option value="review-article">Review Articles</option>
+                    <option value="book-chapter">Book Chapters</option>
+                    <option value="conference-paper">Conference Papers</option>
+                </select>
+                
+                <select id="repo-year-filter" aria-label="Filter by year">
+                    <option value="">All Years</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Repository Results -->
+        <div class="repository-results" id="repository-results">
+            <div class="results-header">
+                <span class="results-count">Showing 1,247 results</span>
+                <div class="sort-options">
+                    <label for="sort-select">Sort by:</label>
+                    <select id="sort-select">
+                        <option value="relevance">Relevance</option>
+                        <option value="date-desc">Newest First</option>
+                        <option value="date-asc">Oldest First</option>
+                        <option value="citations">Most Cited</option>
+                        <option value="title">Title A-Z</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="repository-grid">
+                <!-- Sample repository items -->
+                <article class="repository-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Advanced Machine Learning Techniques for Climate Prediction</h3>
+                        <div class="item-type">Research Article</div>
+                    </div>
+                    <div class="item-authors">
+                        Dr. Sarah Chen, Prof. Michael Rodriguez, Dr. Aisha Patel
+                    </div>
+                    <div class="item-meta">
+                        <span class="item-journal">Nature Climate Change</span>
+                        <span class="item-date">March 2024</span>
+                        <span class="item-field">Environmental Science</span>
+                    </div>
+                    <div class="item-abstract">
+                        This study presents novel machine learning approaches for improving long-term climate predictions, incorporating deep learning models with traditional atmospheric physics...
+                    </div>
+                    <div class="item-metrics">
+                        <span class="metric">
+                            <span class="metric-icon">👁️</span>
+                            <span class="metric-value">1,247 views</span>
+                        </span>
+                        <span class="metric">
+                            <span class="metric-icon">📥</span>
+                            <span class="metric-value">89 downloads</span>
+                        </span>
+                        <span class="metric">
+                            <span class="metric-icon">📝</span>
+                            <span class="metric-value">12 citations</span>
+                        </span>
+                    </div>
+                    <div class="item-actions">
+                        <button class="action-button primary">View Full Text</button>
+                        <button class="action-button">Download PDF</button>
+                        <button class="action-button">Cite</button>
+                        <button class="action-button">Share</button>
+                    </div>
+                </article>
+                
+                <article class="repository-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Quantum Computing Applications in Drug Discovery</h3>
+                        <div class="item-type">Review Article</div>
+                    </div>
+                    <div class="item-authors">
+                        Prof. James Liu, Dr. Elena Kowalski, Dr. David Thompson
+                    </div>
+                    <div class="item-meta">
+                        <span class="item-journal">Journal of Computational Chemistry</span>
+                        <span class="item-date">February 2024</span>
+                        <span class="item-field">Computational Biology</span>
+                    </div>
+                    <div class="item-abstract">
+                        A comprehensive review of quantum computing methodologies applied to pharmaceutical research, covering quantum algorithms for molecular simulation...
+                    </div>
+                    <div class="item-metrics">
+                        <span class="metric">
+                            <span class="metric-icon">👁️</span>
+                            <span class="metric-value">2,156 views</span>
+                        </span>
+                        <span class="metric">
+                            <span class="metric-icon">📥</span>
+                            <span class="metric-value">234 downloads</span>
+                        </span>
+                        <span class="metric">
+                            <span class="metric-icon">📝</span>
+                            <span class="metric-value">28 citations</span>
+                        </span>
+                    </div>
+                    <div class="item-actions">
+                        <button class="action-button primary">View Full Text</button>
+                        <button class="action-button">Download PDF</button>
+                        <button class="action-button">Cite</button>
+                        <button class="action-button">Share</button>
+                    </div>
+                </article>
+                
+                <article class="repository-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Sustainable Materials for Next-Generation Solar Cells</h3>
+                        <div class="item-type">Research Article</div>
+                    </div>
+                    <div class="item-authors">
+                        Dr. Maria Santos, Prof. Robert Kim, Dr. Ahmed Hassan
+                    </div>
+                    <div class="item-meta">
+                        <span class="item-journal">Advanced Materials</span>
+                        <span class="item-date">January 2024</span>
+                        <span class="item-field">Materials Science</span>
+                    </div>
+                    <div class="item-abstract">
+                        Investigation of novel perovskite materials for high-efficiency solar cell applications, focusing on stability and environmental impact...
+                    </div>
+                    <div class="item-metrics">
+                        <span class="metric">
+                            <span class="metric-icon">👁️</span>
+                            <span class="metric-value">987 views</span>
+                        </span>
+                        <span class="metric">
+                            <span class="metric-icon">📥</span>
+                            <span class="metric-value">156 downloads</span>
+                        </span>
+                        <span class="metric">
+                            <span class="metric-icon">📝</span>
+                            <span class="metric-value">7 citations</span>
+                        </span>
+                    </div>
+                    <div class="item-actions">
+                        <button class="action-button primary">View Full Text</button>
+                        <button class="action-button">Download PDF</button>
+                        <button class="action-button">Cite</button>
+                        <button class="action-button">Share</button>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="pagination-btn" disabled>← Previous</button>
+                <div class="pagination-numbers">
+                    <button class="pagination-number active">1</button>
+                    <button class="pagination-number">2</button>
+                    <button class="pagination-number">3</button>
+                    <span class="pagination-ellipsis">...</span>
+                    <button class="pagination-number">42</button>
+                </div>
+                <button class="pagination-btn">Next →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+    ====================================
+    FOOTER
+    ====================================
+    Site footer with organized navigation and contact information
+    -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Peer Review System</h4>
+                <ul>
+                    <li><a href="#submit">Submit Research</a></li>
+                    <li><a href="#dashboard">Review Dashboard</a></li>
+                    <li><a href="#repository">Browse Repository</a></li>
+                    <li><a href="#">Review Guidelines</a></li>
+                    <li><a href="#">Ethics Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>For Researchers</h4>
+                <ul>
+                    <li><a href="#">Submission Guidelines</a></li>
+                    <li><a href="#">Reviewer Training</a></li>
+                    <li><a href="#">Publication Ethics</a></li>
+                    <li><a href="#">Copyright Information</a></li>
+                    <li><a href="#">Open Access Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Technical Support</a></li>
+                    <li><a href="#">Contact Editorial Team</a></li>
+                    <li><a href="#">Report Issues</a></li>
+                    <li><a href="#">System Status</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="index.html#about">Raboks Library</a></li>
+                    <li><a href="#">Editorial Board</a></li>
+                    <li><a href="#">Advisory Committee</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Raboks Library Research & Development Center. Advancing scholarly communication through rigorous peer review.</p>
+        </div>
+    </footer>
+
+    <!-- 
+    ====================================
+    JAVASCRIPT
+    ====================================
+    External JavaScript files for functionality
+    -->
+    <script src="script.js"></script>
+    <script src="peer-review.js"></script>
+</body>
+</html>
