@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thought Leaders Portfolio - Raboks Library Research & Development Center. Showcasing influential voices we've helped amplify through strategic thought leadership and PR.">
+    <meta name="keywords" content="thought leadership, research leaders, academic influence, PR, LinkedIn, professional development">
+    <meta name="author" content="Raboks Library R&D Team">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Thought Leaders | Raboks Library">
+    <meta property="og:description" content="Discover the influential researchers and academics whose thought leadership we've helped amplify.">
+    <meta property="og:type" content="website">
+    
+    <!-- Page Title -->
+    <title>Thought Leaders | Raboks Library</title>
+    
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="thought-leaders.css">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="thought-leaders.css" as="style">
+    <link rel="preload" href="thought-leaders.js" as="script">
+</head>
+<body>
+    <!-- 
+    ====================================
+    HEADER & NAVIGATION
+    ====================================
+    -->
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <a href="index.html" class="logo" aria-label="Raboks Library Research and Development Center - Home">
+                <img src="logo.svg" alt="Raboks Library R&D Logo" class="logo-image">
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html#research" aria-label="View our research areas">Research</a></li>
+                <li><a href="index.html#services" aria-label="Explore our services">Services</a></li>
+                <li><a href="publications.html" aria-label="Browse our publications">Publications</a></li>
+                <li><a href="peer-review.html" aria-label="Access peer review system">Peer Review</a></li>
+                <li><a href="thought-leaders.html" class="active" aria-label="View thought leaders">Thought Leaders</a></li>
+                <li><a href="index.html#contact" aria-label="Contact information">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 
+    ====================================
+    PAGE HERO
+    ====================================
+    -->
+    <section class="page-hero" role="main">
+        <div class="hero-content">
+            <h1>Thought Leaders</h1>
+            <p class="hero-subtitle">Amplifying Influential Voices in Research & Academia</p>
+            <p class="hero-description">
+                We partner with leading researchers and academics to build their professional brand, expand their influence, and share their expertise with broader audiences through strategic thought leadership and public relations.
+            </p>
+        </div>
+    </section>
+
+    <!-- 
+    ====================================
+    FILTER & SEARCH SECTION
+    ====================================
+    -->
+    <section class="section">
+        <div class="leaders-controls">
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="leader-search" 
+                    placeholder="Search by name, expertise, or institution..."
+                    aria-label="Search thought leaders"
+                >
+                <button class="search-button" aria-label="Search">
+                    <span>🔍</span>
+                </button>
+            </div>
+            
+            <div class="filter-container">
+                <select id="expertise-filter" aria-label="Filter by expertise">
+                    <option value="all">All Expertise Areas</option>
+                    <option value="data-science">Data Science & AI</option>
+                    <option value="biology">Systems Biology</option>
+                    <option value="materials">Materials Science</option>
+                    <option value="sustainability">Sustainability</option>
+                    <option value="quantum">Quantum Computing</option>
+                    <option value="cognitive">Cognitive Science</option>
+                </select>
+                
+                <select id="platform-filter" aria-label="Filter by platform">
+                    <option value="all">All Platforms</option>
+                    <option value="linkedin">LinkedIn</option>
+                    <option value="media">Media Features</option>
+                    <option value="conferences">Conference Speaking</option>
+                    <option value="publications">Publications</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- 
+        ====================================
+        FEATURED THOUGHT LEADERS
+        ====================================
+        -->
+        <div class="featured-leaders-section">
+            <h2 class="section-title">Featured Thought Leaders</h2>
+            <p class="section-subtitle">Leading voices shaping the future of research and innovation</p>
+            
+            <div class="featured-leaders-grid" id="featured-leaders">
+                <!-- Featured leaders will be dynamically loaded here -->
+            </div>
+        </div>
+
+        <!-- 
+        ====================================
+        ALL THOUGHT LEADERS
+        ====================================
+        -->
+        <div class="all-leaders-section">
+            <h2 class="section-title">Our Portfolio</h2>
+            <p class="section-subtitle">Researchers and academics we've helped amplify their impact</p>
+            
+            <div class="leaders-grid" id="all-leaders">
+                <!-- All leaders will be dynamically loaded here -->
+            </div>
+        </div>
+
+        <!-- 
+        ====================================
+        IMPACT STATISTICS
+        ====================================
+        -->
+        <div class="impact-section">
+            <h2 class="section-title">Our Impact</h2>
+            <p class="section-subtitle">Measurable results from our thought leadership programs</p>
+            
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number" data-target="150">0</div>
+                    <div class="impact-label">Thought Leaders</div>
+                    <p class="impact-description">Researchers and academics we've partnered with</p>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-number" data-target="2.5">0</div>
+                    <div class="impact-suffix">M+</div>
+                    <div class="impact-label">Total Reach</div>
+                    <p class="impact-description">Combined audience across all platforms</p>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-number" data-target="500">0</div>
+                    <div class="impact-suffix">+</div>
+                    <div class="impact-label">Media Features</div>
+                    <p class="impact-description">Press mentions and media appearances</p>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-number" data-target="85">0</div>
+                    <div class="impact-suffix">%</div>
+                    <div class="impact-label">Engagement Growth</div>
+                    <p class="impact-description">Average increase in professional engagement</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 
+        ====================================
+        SERVICES OVERVIEW
+        ====================================
+        -->
+        <div class="services-overview">
+            <h2 class="section-title">Thought Leadership Services</h2>
+            <p class="section-subtitle">Comprehensive support to build and amplify your professional brand</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">💼</span>
+                    <div class="service-title">LinkedIn Strategy</div>
+                    <p class="service-description">Profile optimization, content strategy, and engagement management to build your professional network and influence.</p>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-icon">📰</span>
+                    <div class="service-title">Media Relations</div>
+                    <p class="service-description">Press release distribution, media pitching, and interview coordination to secure coverage in leading publications.</p>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-icon">✍️</span>
+                    <div class="service-title">Content Creation</div>
+                    <p class="service-description">Ghost-writing, editing, and content development for articles, blog posts, and social media to showcase your expertise.</p>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-icon">🎤</span>
+                    <div class="service-title">Speaking Opportunities</div>
+                    <p class="service-description">Conference booking, presentation coaching, and event management to position you as a sought-after speaker.</p>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-icon">📊</span>
+                    <div class="service-title">Brand Analytics</div>
+                    <p class="service-description">Performance tracking, audience insights, and impact measurement to optimize your thought leadership strategy.</p>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-icon">🌐</span>
+                    <div class="service-title">Digital Presence</div>
+                    <p class="service-description">Website development, SEO optimization, and online reputation management to enhance your digital footprint.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 
+        ====================================
+        CALL TO ACTION
+        ====================================
+        -->
+        <div class="cta-section">
+            <div class="cta-content">
+                <h2>Ready to Amplify Your Voice?</h2>
+                <p>Join our portfolio of influential thought leaders and expand your impact in the research community.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="cta-button">Get Started</a>
+                    <a href="#services" class="cta-button secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+    ====================================
+    FOOTER
+    ====================================
+    -->
+    <footer id="contact" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Research</h4>
+                <ul>
+                    <li><a href="index.html#research">Current Projects</a></li>
+                    <li><a href="index.html#research">Research Areas</a></li>
+                    <li><a href="#">Methodologies</a></li>
+                    <li><a href="#">Collaborations</a></li>
+                    <li><a href="#">Funding</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Publications</h4>
+                <ul>
+                    <li><a href="publications.html">Journal Articles</a></li>
+                    <li><a href="publications.html">Research Reports</a></li>
+                    <li><a href="publications.html">Conference Papers</a></li>
+                    <li><a href="publications.html">Working Papers</a></li>
+                    <li><a href="publications.html">Book Publications</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Thought Leadership</h4>
+                <ul>
+                    <li><a href="thought-leaders.html">Our Portfolio</a></li>
+                    <li><a href="thought-leaders.html#services">Services</a></li>
+                    <li><a href="#">Success Stories</a></li>
+                    <li><a href="#">Apply Now</a></li>
+                    <li><a href="#">Resources</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="index.html#services">Consultation</a></li>
+                    <li><a href="index.html#services">Training Programs</a></li>
+                    <li><a href="index.html#services">Data Analysis</a></li>
+                    <li><a href="peer-review.html">Peer Review</a></li>
+                    <li><a href="#">Facilities</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact Information</a></li>
+                    <li><a href="#">Visit Us</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Raboks Library Research & Development Center. Advancing knowledge through systematic inquiry.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="thought-leaders.js"></script>
+</body>
+</html>

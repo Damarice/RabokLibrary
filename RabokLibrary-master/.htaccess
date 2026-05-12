@@ -1,0 +1,7 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home3/themvaso/library.raboktechnologies.co.ke"
+PassengerBaseURI "/"
+PassengerNodejs "/home3/themvaso/nodevenv/library.raboktechnologies.co.ke/22/bin/node"
+PassengerAppType node
+PassengerStartupFile app.js
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
